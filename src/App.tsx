@@ -11,14 +11,14 @@ import { ThemeProvider } from './store/ContextAPI'
 
 function App() {
   return (
-<Router>
   <ThemeProvider>
+<Router>
     <Switch>
         <Route exact path="/tworzewiersz" component={createPoem} />
         <Route exact path="/" component={home} />
     </Switch>
-  </ThemeProvider>
 </Router>
+  </ThemeProvider>
   );
 }
 

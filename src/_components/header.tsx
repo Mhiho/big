@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
-
+import Hamburger from './hamburger';
 export const header = () => {
     const menuLinks =  [{name:'Wiersz',link: '/tworzewiersz'},{name:'Opowiadanie', link:'/tworzeopowiadanie'},{name:'Powieść', link: '/tworzepowiesc'},{name:'Komiks', link:'/tworzekomiks'}]
  return (
@@ -34,8 +34,7 @@ export const header = () => {
               )
             })}
                 <li>
-                {/* <FacebookIcon className="facebook-like-button" size={40} round={true} url={fbUrl} />
-                <FacebookShareButton /> */}
+                    <Hamburger />
                 </li>
           </ul>
         </div>
