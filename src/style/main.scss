@@ -1,12 +1,13 @@
+@import '_colors.scss';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-$primaryColor: #26292c;
-$accentColor: white;
-$lightColor: #cccccc;
-
+main {
+    min-height: 190vh;
+}
 .Header {
     position: fixed;
     z-index: 10;
@@ -22,6 +23,10 @@ $lightColor: #cccccc;
 body {
     width: 100vw;
     overflow-x: hidden;
+    // background: rgba(217,217,217, 0.8);
+    // background: #f1f1f1;
+    color: rgba(38,41,44,1);
+    min-height: 90vh;
 }
 body a {
     text-decoration: none !important;
@@ -37,7 +42,7 @@ nav {
     align-items: center;
     position: relative;
     z-index: 1000;
-    background: $primaryColor;
+
 }
 .navMain {
     background: $primaryColor;
@@ -76,6 +81,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .upLine, .middleLine, .downLine {
     display: flex;
@@ -239,87 +245,7 @@ ul div {
 .Button2:hover {
     background: darken(#252525, 10%)
 }
-.light {
-    background: rgba(38,41,44,1);
-    background: linear-gradient(140deg,  rgba(38,41,44,1) 10%, rgba(217,217,217,1) 300%);
-    color: rgb(217,217,217);
-    min-height: 90vh; 
-}
-.light a, .light a:active,.light a:visited,.light a:focus {
-    color: rgb(217,217,217);
-}
 
-.dark {
-    background: rgb(217,217,217);
-    background: linear-gradient(140deg, rgba(217,217,217,1) 10%, rgba(38,41,44,1) 300%);
-    color: rgba(38,41,44,1);
-    min-height: 90vh;
-}
-.dark a,.dark a:active,.dark a:visited,.dark a:focus {
-    color: #26292c;
-    
-}
-.dark a:hover {
-    color: black;
-}
-.light a:hover {
-    color: white;
-}
-.navUl {
-    background: lighten(rgba(38,41,44,1),7%)
-}
-.navUl2 {
-    background: darken(rgb(217,217,217),7%)
-}
-.wrapper {
-    background: $primaryColor;
-    position: relative;
-}
-.Img {
-    width: 60vw;
-    margin: auto;
-    opacity: 0.1;
-}
-.wrapper h1 {
-    position: fixed;
-    top:50vh;
-    left: 40vw;
-    color: white;
-}
-.Footer {
-    padding: 10px 20px 0 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 80px;
-    background: $primaryColor;
-    margin-top: 240px;
-}
-.Footer p {
-    text-align: center;
-    color: beige;
-    margin: auto;
-}
-.Footer2 {
-    background: $lightColor;
-}
-.Footer2 p {
-    color: #252525;
-}
-.Signature, .Signature strong, .Signature span {
-    text-decoration: none;
-    color: beige;
-    &:hover {
-        color: white;
-    }
-}
-.Signature2, .Signature2 strong, .Signature2 span {
-    color: #252525;
-    &:hover{
-        color: black;
-    }
-}
 .HomeFace {
     height: 50vh;
     width: 100%;
@@ -338,373 +264,52 @@ ul div {
 .hamburgerBig > div > div {
     height: 10px;
 }
-.marginTop{
-    margin-top: 40px;
-}
-.smallNav{
-    display: none;
-    width: 270px;
-}
-.smallNav ul{
-    display: flex;
-    flex-direction: column;
-    width: 115px;
-    border-radius: 0 0 10px 0
-}
 
-.smallNav ul li {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-.smallNav ul div {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 30px;
-}
-.hiddenMenu {
-    padding: 0 6px 0 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.typicalBtn {
-    background: lightgreen;
-    height: 54px;
-    min-width: 54px;
-    border: 1px solid green;
-    border-radius: 3px;
-    color: #404040;
-    margin: 4px 4px 16px 4px;
-    padding: 5px 25px 5px 25px; 
-    cursor: pointer; 
-    font-weight: 900;
-}
-.typicalBtn:hover {
-    background: #65e765;
-    border: 1px solid darkgreen;
-    color: #fff;
-}
-
-@keyframes moveDown{
-    0%{margin-top: 40px;} 
-   100%{margin-top: 240px;}
-}
-@keyframes moveUlDown {
-    0%{margin-top: 0px}
-    100%{margin-top: 0}
-}
-.correction {
-    animation: moveUlDown 0.7s linear forwards;
-    display: flex;
-}
-.Collapse {
-    animation: moveDown 0.7s linear forwards;
-}
-.hidden {
-    color: darken(rgb(217,217,217),5%);
-    background: darken(rgb(217,217,217),5%);
-    height: 240px;
-    width: 100%;
-    margin-top: -200px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-.hidden2 {
-    background: #26292c;
-    color: #26292c;
-    height: 240px;
-    width: 100%;
-    margin-top: -200px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-@keyframes moveHiddenMoved {
-    0%{margin-top: -240px}
-    100%{margin-top: -40px}
-}
-@keyframes up {
-    0%{margin-top: 0px;}
-    100%{margin-top: -200px}
-}
-.upIt {
-    animation: up 0.7s linear forwards;
-}
-.hiddenmoved {
-    animation: moveHiddenMoved 0.7s linear forwards;
-}
-.CenterText {
-    display: flex;
-    margin-bottom: 4px;
-    text-align: center;
-    position: relative;
-    z-index: 9;
-}
 @media (max-width: 999px){
-    .leftMenu{
-        margin-left: 0;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-    .middleMenu {
-        display: none;
-    }
-    .rightMenu {
-    display: none;
-    }
-    nav{    
-    flex-wrap: wrap;
-    }
-    .correction {
-        height: 200px;
-        opacity: 0.8;
-    }
-    ul li {
-        height: 26px
-    }
+  
 
 }                                                                                                                                                                                                                                                                                   
 @media (min-width: 1000px){
-    .smallNav{
-        display: none;
-    }
-    .Collapse{
-        animation: '';
-    }
-    .correction {
-        animation: '';
-        height: 240px;
-    }
-}
-$back1: 1.9%;
-$back2: 1.8%;
-$back3: 1.9%;
-$back4: 2%;
-$back5: 2.1%;
 
-
-.backplan1{
-    width: $back1 ;
-    height: 100%;
-    background: #AAF0D1;
-    position: absolute;
-    z-index: 4;
-    animation: resize1 4s ease-in-out infinite;
-}
-.backplan2{
-    width: $back2;
-    height: 100%;
-    background: #AAF0D1;
-    position: absolute;
-    z-index: 3;
-    animation: resize2 4s ease-in-out infinite;
-}
-.backplan3{
-    width: $back3;
-    height: 100%;
-    background: red;
-    position: absolute;
-    z-index: 6;
-    animation: resize3 4s ease-in-out infinite;
-}
-.backplan4{
-    width: $back4;
-    height: 100%;
-    background: #AAF0D1;
-    position: absolute;
-    z-index: 1;
-    animation: resize4 4s ease-in-out infinite;
-}
-.backplan5{
-    width: $back5;
-    height: 100%;
-    background: #AAF0D1;
-    position: absolute;
-    z-index: 0;
-    animation: resize5 4s ease-in-out infinite;
 }
 
-@keyframes resize1 {
-    0%{transform: translate(-350px)}
-    25%{transform: translate(-100px);width: $back1 * 5.8; opacity: .1}
-    75%{transform: translate(100px);width: $back1 * .2}
-    100%{transform: translate(350px); opacity: 0.1}
-}
-@keyframes resize2 {
-    0%{transform: translate(-310px)}
-    25%{transform: translate(-100);width: $back2 * 5.2; background:  navy}
-    75%{transform: translate(100);width: $back2 * .2}
-    100%{transform: translate(310px); opacity: 0.1}
-}
-@keyframes resize3 {
-    0%{transform: translate(0px)}
-    25%{transform: translate(280px); width: $back3 * .35}
-    75%{transform: translate(-280px); width: $back3 * .15}
-    100%{transform: translate(0px)}
-}
-@keyframes resize4 {
-    0%{transform: translate(0px)}
-    25%{transform: translate(250px); width: $back4 * 5.1; opacity: .1}
-    75%{transform: translate(-250px); width: $back4 * .1}
-    100%{transform: translate(0px)}
-}
-@keyframes resize5 {
-    0%{transform: translate(0px)}
-    25%{transform: translate(220px); width: $back1 * 2.2; background:  navy}
-    75%{transform: translate(-220px);  width: $back1 * .05}
-    100%{transform: translate(0px)}
-}
-@keyframes dropDown{
-    0%{height: 0}
-    100%{height: 220px}
-}
-.Submenu {
-    width: 100%;
-    margin-top: 180px;
-    margin-right: 14px;
-    animation: dropDown .5s linear forwards;
-    background: darken(rgba(38,41,44,1),9%);
-    opacity: 0.7;
+// nowe
+.subnav-container {
+    width: 90vw;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    border-radius: 0 0 0 10px;
+    justify-content: center;
 }
-.Submenu2 {
-    width: 100%;
-    margin-top: 180px;
-    margin-right: 14px;
-    animation: dropDown .5s linear forwards; 
-    background: lighten(rgb(217,217,217),9%);
-    opacity: 0.7;
+
+.menuItem-container {
+    width: 90%;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    border-radius: 0 0 0 10px;
+    justify-content: center;
+    align-items: center;
 }
-.hideIt {
+.hamburger-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 94px;
+    height: 60px;
+    background:rgba(217,217,217, 0.8);
+    border: 1px solid #808080;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.menuItem {
+    color: #252525;
+    letter-spacing: 0.8rem;
+}
+.menuItem:active, .menuItem:visited {
+    color: #252525;
+}
+.menuItem:hover {
+    color: #737373;
+}
+.menuItem-hidden {
     display: none;
 }
-.mainSubmenu {
-    display: flex;
-    flex-direction: column;
-    color: #252525;
-    justify-content: flex-end;
-    margin-top: 10px;
-}
-.mainSubmenu2 {
-    display: flex;
-    flex-direction: column;
-    color: #d9d9d9;
-    justify-content: flex-end;
-}
-.mainSubmenu li {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 6px;
-    cursor: pointer;
-}
-.mainSubmenu2 li {
-    display: flex;
-    justify-content: flex-end;
-    padding: 2px 6px 2px 6px;
-
-    cursor: pointer;
-}
-.mainSubmenu li a{text-decoration: none; color:#252525; &:hover{color: black !important}; &:visited{ color: #252525};&:focus{ color: #252525};&:active{ color: #252525}}
-.mainSubmenu2 li a{text-decoration: none; color: #d9d9d9; &:hover{color: white !important}; &:visited{ color: #d9d9d9};&:focus{ color: #d9d9d9};&:active{ color: #d9d9d9}}
-
-.closePanel {
-    font-size: 2em;
-    padding: 0px 0px 20px 10px;
-}
-
-@keyframes dropRight{
-    0%{width: 0}
-    100%{width: 200px}
-}
-.miniSubmenu {
-    height: 100%;
-    padding: 0 6px 0 0;
-    animation: dropRight .5s linear forwards;
-    background: darken(rgba(38,41,44,1),15%);
-    opacity: 0.75;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    border-radius: 0 0 10px 0
-}
-.miniSubmenu2 {
-    height: 100%;
-    padding: 0 6px 0 0;
-    animation: dropRight .5s linear forwards; 
-    background: darken(rgb(217,217,217),15%);
-    opacity: 0.75;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    border-radius: 0 0 10px 0
-}
-.hideIt {
-    display: none;
-}
-.mainMiniSubmenu {
-    display: flex;
-    flex-direction: column;
-    color: #252525;
-    justify-content: flex-end;
-    margin-top: 10px;
-}
-.mainMiniSubmenu2 {
-    display: flex;
-    flex-direction: column;
-    color: #d9d9d9;
-    justify-content: flex-end;
-}
-.mainMiniSubmenu li {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 6px;
-    cursor: pointer;
-    &:hover{
-        color: black ;
-    }
-}
-.mainMiniSubmenu2 li {
-    display: flex;
-    justify-content: flex-end;
-    padding: 2px 6px 2px 6px;
-
-    cursor: pointer;
-    &:hover{
-        color: white;
-    }  
-}
-.mainMiniSubmenu li a{text-decoration: none; color: #252525; &:hover{color: black !important}; &:visited{ color: #252525};&:focus{ color: #252525};&:active{ color: #252525}}
-.mainMiniSubmenu2 li a{text-decoration: none; color: #d9d9d9; &:hover{color: white !important}; &:visited{ color: #d9d9d9};&:focus{ color: #d9d9d9};&:active{ color: #d9d9d9}}
-.closeMiniPanel {
-    font-size: 2em;
-    padding: 0px 0px 20px 10px;
-}
-.switch {
-    font-size: 1.5em;
-    color: #252525;
-    cursor: pointer;
-    &:hover{
-        color: black;
-    }
-}
-.switch2 {
-    font-size: 1.5em;
-    color: #d9d9d9;
-    cursor: pointer;
-    &:hover{
-        color: white;
-    }
+.bonmot {
+    margin: 10px 4px 10px 10px
 }

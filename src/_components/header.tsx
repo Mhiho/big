@@ -1,46 +1,39 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Hamburger from './hamburger';
-export const header = () => {
-    const menuLinks =  [{name:'Wiersz',link: '/tworzewiersz'},{name:'Opowiadanie', link:'/tworzeopowiadanie'},{name:'Powieść', link: '/tworzepowiesc'},{name:'Komiks', link:'/tworzekomiks'}]
- return (
-     <>
-     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarTogglerDemo01"
-          aria-controls="navbarTogglerDemo01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a className="navbar-brand siteTitle" href="/">
-            Moje logo
-            <p>Twórz co chcesz, za darmo.</p>
-          </a>
-          <ul className="navbar-nav mr-auto mt-2 mt-lg-0 menu">
+import { IAppState } from '../store/reduxStore';
+import { useSelector } from 'react-redux';
+import '../style/main.scss';
+
+export const menuLinks = [{ name: 'Szukam inspiracji', link: '/' }, { name: 'Wiersz', link: '/tworzewiersz' }, { name: 'Opowieść', link: '/tworzeopowiadanie' }, { name: 'powieść', link: '/tworzepowiesc' },{ name: 'o autorze strony', link: '/omnie'}]
+
+const Header = () => {
+  const menuIndex = useSelector((state: IAppState) => state.menuIndex.menuIndex)
+
+
+  return (
+    <>
+      <nav>
+        <div className="subnav-container">
+          <div className="menuItem-container">
             {menuLinks.map((menuItem, index) => {
               return (
-                <li className="nav-item" key={index + menuItem.name}>
-                  <Link className="nav-link" to={menuItem.link}>
-                    {menuItem.name}
+                <div className="nav-item" key={index + menuItem.name}>
+                  <Link className={menuIndex === index ? `menuItem` : `menuItem menuItem-hidden`} to={menuItem.link}>
+                    {menuItem.name.toUpperCase()}
                   </Link>
-                </li>
-          
+                </div>
+
               )
             })}
-                <li>
-                    <Hamburger />
-                </li>
-          </ul>
+          </div>
+          <div className="hamburger-container">
+            <Hamburger />
+          </div>
         </div>
       </nav>
-     </>
- )
+    </>
+  )
 }
 
-export default header;
+export default Header;
