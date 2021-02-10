@@ -314,6 +314,7 @@ ul div {
     margin: 15px 10px 10px 30px
 }
 .blinking {
+    font-weight: 100;
     animation: blink 1s infinite step-start;
 }
 @keyframes blink {
