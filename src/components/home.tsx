@@ -26,7 +26,7 @@ useEffect(() => {
     return (
         
         <Layout>
-            <h3 className='bonmot'>{string}</h3>
+            <h3 className='bonmot'>{string} <span className="blinking">|</span> </h3>
         </Layout>
     )
 }

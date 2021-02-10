@@ -32,6 +32,8 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      <div className="line-below-header">
+      </div>
     </>
   )
 }

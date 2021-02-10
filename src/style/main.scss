@@ -311,5 +311,17 @@ ul div {
     display: none;
 }
 .bonmot {
-    margin: 10px 4px 10px 10px
+    margin: 15px 10px 10px 30px
+}
+.blinking {
+    animation: blink 1s infinite step-start;
+}
+@keyframes blink {
+    50% { opacity: 0 }
+}
+.line-below-header {
+    margin-top: 20px;
+    width: 100vw;
+    height: 1px;
+    background: grey;
 }
