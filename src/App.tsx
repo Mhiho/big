@@ -14,8 +14,8 @@ function App() {
   <ThemeProvider>
 <Router>
     <Switch>
-        <Route exact path="/tworzewiersz" component={createPoem} />
-        <Route exact path="/" component={Home} />
+        <Route path="/" component={Home} />
+        <Route path="/tworzewiersz" component={createPoem} />
     </Switch>
 </Router>
   </ThemeProvider>
